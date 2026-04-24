@@ -31,7 +31,7 @@ export default function Footer() {
           {/* LEFT */}
           <div className="text-center md:text-left">
             <h2 className="text-xl font-bold text-black dark:text-white">
-              Dhruvit Soni
+              Soni Dhruvit
             </h2>
 
             <p className="text-gray-600 dark:text-gray-400 text-sm mt-2">

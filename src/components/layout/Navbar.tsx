@@ -68,7 +68,7 @@ export default function Navbar() {
         className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white/70 shadow-sm backdrop-blur-md dark:border-gray-800 dark:bg-black/70"
       >
         <div className="flex items-center justify-between px-4 py-4 sm:px-6 md:px-12 lg:px-16">
-          <h1 className="text-xl font-bold text-black dark:text-white">Dhruvit</h1>
+          <h1 className="text-xl font-bold text-black dark:text-white">Soni Dhruvit</h1>
 
           <div className="hidden items-center gap-8 md:flex">
             {links.map((link) => (

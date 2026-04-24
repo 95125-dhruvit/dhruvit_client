@@ -49,145 +49,85 @@ export default function Home() {
 
   return (
     <>
-      {/* <div className="bg-white dark:bg-black text-black dark:text-white"> */}
-
       {/* ================= HERO ================= */}
-      {/* <section className="min-h-screen flex flex-col justify-center">
-        <div className="max-w-6xl mx-auto px-6 md:px-16">
-
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-6xl font-bold leading-tight"
-          >
-            Hi, I'm{" "}
-            <span
-              className="
-                inline-block
-                min-w-[14ch] md:min-w-[20ch]
-                bg-gradient-to-r from-black to-gray-500
-                dark:from-white dark:to-gray-500
-                bg-clip-text text-transparent
-              "
-            >
-              {displayed}
-              <span className="ml-1 animate-pulse">|</span>
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mt-6 text-gray-600 dark:text-gray-400 text-lg max-w-2xl"
-          >
-            Full Stack Developer focused on building production-grade systems
-            using React, Node.js, and scalable backend architecture.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="mt-8 flex gap-4 flex-wrap"
-          >
-            <a
-              href="/projects"
-              className="bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-lg font-medium transition hover:opacity-90"
-            >
-              View Work
-            </a>
-
-            <a
-              href="/contact"
-              className="border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-lg transition hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              Contact Me
-            </a>
-          </motion.div>
-
-        </div>
-      </section> */}
-
       <section className="min-h-screen flex items-center relative overflow-hidden">
-  <div className="max-w-6xl mx-auto px-6 md:px-16 w-full">
+        <div className="max-w-6xl mx-auto px-6 md:px-16 w-full">
 
-    {/* fade (desktop only) */}
-    <div className="hidden md:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-black to-transparent z-10 pointer-events-none" />
+          {/* fade (desktop only) */}
+          <div className="hidden md:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-black to-transparent z-10 pointer-events-none" />
 
-    <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
 
-      {/* ================= LEFT TEXT ================= */}
-      <div className="relative z-20 min-w-0">
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-6xl font-bold leading-tight"
-        >
-          Hi, I'm{" "}
-          <span
-            className="
+            {/* ================= LEFT TEXT ================= */}
+            <div className="relative z-20 min-w-0">
+              <motion.h1
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-4xl md:text-6xl font-bold leading-tight"
+              >
+                Hi, I'm{" "}
+                <span
+                  className="
               inline-block
               w-[18ch] sm:w-[20ch] md:w-[24ch]
               bg-gradient-to-r from-black to-gray-500
               dark:from-white dark:to-gray-500
               bg-clip-text text-transparent
             "
-          >
-            {displayed}
-            <span className="ml-1 inline-block w-[1ch] animate-pulse">|</span>
-          </span>
-        </motion.h1>
+                >
+                  {displayed}
+                  <span className="ml-1 inline-block w-[1ch] animate-pulse">|</span>
+                </span>
+              </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mt-6 text-gray-600 dark:text-gray-400 text-lg max-w-2xl"
-        >
-          Full Stack Developer focused on building production-grade systems
-          using React, Node.js, and scalable backend architecture.
-        </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="mt-6 text-gray-600 dark:text-gray-400 text-lg max-w-2xl"
+              >
+                Full Stack Developer focused on building production-grade systems
+                using React, Node.js, and scalable backend architecture.
+              </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="mt-8 flex gap-4 flex-wrap"
-        >
-          <a
-            href="/projects"
-            className="bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-lg font-medium transition hover:opacity-90"
-          >
-            View Work
-          </a>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="mt-8 flex gap-4 flex-wrap"
+              >
+                <a
+                  href="/projects"
+                  className="bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-lg font-medium transition hover:opacity-90"
+                >
+                  View Work
+                </a>
 
-          <a
-            href="/contact"
-            className="border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-lg transition hover:bg-gray-100 dark:hover:bg-gray-800"
-          >
-            Contact Me
-          </a>
-        </motion.div>
-      </div>
+                <a
+                  href="/contact"
+                  className="border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-lg transition hover:bg-gray-100 dark:hover:bg-gray-800"
+                >
+                  Contact Me
+                </a>
+              </motion.div>
+            </div>
 
-      {/* ================= RIGHT IMAGE ================= */}
-      <motion.div
-        initial={{ opacity: 0, x: 60 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        className="
+            {/* ================= RIGHT IMAGE ================= */}
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="
           flex justify-center
           relative z-10
           ml-0 md:-ml-20 lg:-ml-32
         "
-      >
-        <motion.img
-          src="/dhruvit.png"
-          alt="Hero"
-          className="
+            >
+              <motion.img
+                src="/dhruvit.png"
+                alt="Hero"
+                className="
             w-[240px]
             sm:w-[280px]
             md:w-[380px]
@@ -195,21 +135,21 @@ export default function Home() {
             object-contain
             opacity-90
           "
-          animate={{
-            y: [0, -15, 0],
-            rotate: [0, 2, -2, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      </motion.div>
+                animate={{
+                  y: [0, -15, 0],
+                  rotate: [0, 2, -2, 0],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </motion.div>
 
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
 
       {/* ================= SYSTEMS ================= */}
       <section className="py-24 border-t border-gray-200 dark:border-gray-800">
@@ -221,18 +161,32 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
+
               {
-                title: "Scalable Applications",
-                desc: "Built with performance and real users in mind.",
+                title: "Full-Stack Applications",
+                desc: "End-to-end web applications built for performance, scalability, and real users.",
               },
               {
-                title: "API Integrations",
-                desc: "Payments, document systems, and external services.",
+                title: "API & System Integrations",
+                desc: "Connecting third-party services, payments, and external systems seamlessly.",
               },
               {
-                title: "AI Systems",
-                desc: "Smart features powered by modern AI workflows.",
+                title: "Scalable Backend Systems",
+                desc: "Robust and efficient backend architectures designed for reliability and growth.",
               },
+              {
+                title: "Authentication & Security",
+                desc: "Secure user authentication, authorization, and data protection across applications.",
+              },
+              {
+                title: "Real-Time Systems",
+                desc: "Interactive features like live updates, messaging, and event-driven functionality.",
+              },
+              {
+                title: "Performance Optimization",
+                desc: "Improving speed, efficiency, and scalability for better user experience.",
+              },
+
             ].map((item, i) => (
               <motion.div
                 key={i}
