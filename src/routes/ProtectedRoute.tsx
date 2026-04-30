@@ -1,11 +1,16 @@
-// import { Navigate } from "react-router-dom";
+import type { ReactNode } from "react";
+import { Navigate } from "react-router-dom";
 
-// export default function ProtectedRoute({ children }: any) {
-//   const isAuth = true; // replace with real auth later
+interface Props {
+  children: ReactNode;
+}
 
-//   if (!isAuth) {
-//     return <Navigate to="/" />;
-//   }
+export default function ProtectedRoute({ children }: Props) {
+  const token = localStorage.getItem("authToken");
 
-//   return children;
-// }
+  if (!token) {
+    return <Navigate to="/admin/login" replace />;
+  }
+
+  return children;
+}

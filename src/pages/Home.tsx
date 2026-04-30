@@ -205,62 +205,128 @@ export default function Home() {
       </section>
 
       {/* ================= IMPACT ================= */}
-      <section className="py-24 border-t border-gray-200 dark:border-gray-800">
-        <div className="max-w-5xl mx-auto px-6 md:px-16">
+      <section className="py-28 border-t border-gray-200 dark:border-gray-800">
+        <div className="max-w-4xl mx-auto px-6 md:px-16">
 
-          <motion.h2 {...fadeUp} className="text-3xl font-bold mb-10">
+          {/* Heading */}
+          <motion.h2
+            {...fadeUp}
+            className="text-3xl md:text-4xl font-semibold mb-16 tracking-tight"
+          >
             Impact & Responsibilities
           </motion.h2>
 
-          <motion.div className="space-y-3 text-gray-600 dark:text-gray-400 text-sm">
-            <p>• Build production-level React applications</p>
-            <p>• Develop scalable Node.js APIs</p>
-            <p>• Integrate third-party services</p>
-            <p>• Optimize performance & reliability</p>
-            <p>• Work on real-world user systems</p>
-          </motion.div>
+          {/* Timeline */}
+          <div className="relative">
+
+            {/* Vertical line */}
+            <div className="absolute left-3 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800"></div>
+
+            <div className="space-y-12">
+              {[
+                {
+                  title: "Building Production Systems",
+                  desc: "Develop and maintain real-world applications used by active users, ensuring stability and scalability.",
+                },
+                {
+                  title: "Owning Backend Architecture",
+                  desc: "Design APIs and system structures that scale efficiently while maintaining performance and reliability.",
+                },
+                {
+                  title: "End-to-End Feature Delivery",
+                  desc: "Take full ownership of features — from frontend interfaces to backend logic and database design.",
+                },
+                {
+                  title: "Integrating External Services",
+                  desc: "Connect payments, APIs, and third-party tools to extend product capabilities seamlessly.",
+                },
+                {
+                  title: "Performance & Reliability Focus",
+                  desc: "Continuously optimize speed, reduce latency, and ensure systems perform under real-world conditions.",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  {...fadeUp}
+                  className="relative flex items-start gap-6"
+                >
+                  {/* Dot */}
+                  <div className="relative z-10 mt-1.5">
+                    <div className="w-3 h-3 rounded-full bg-gray-900 dark:bg-white"></div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed max-w-xl">
+                      {item.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+          </div>
 
         </div>
       </section>
 
       {/* ================= APPROACH ================= */}
-      <section className="py-24 border-t border-gray-200 dark:border-gray-800">
-        <div className="max-w-4xl mx-auto px-6 md:px-16 text-center">
+      <section className="py-28 border-t border-gray-200 dark:border-gray-800">
+        <div className="max-w-5xl mx-auto px-6 md:px-16 text-center">
 
-          <motion.h2 {...fadeUp} className="text-3xl font-bold mb-6">
+          {/* Heading */}
+          <motion.h2
+            {...fadeUp}
+            className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight"
+          >
             Engineering Approach
           </motion.h2>
 
-          <motion.p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-            I focus on clean architecture, scalability, and performance —
-            building systems that are reliable and maintainable long-term.
+          {/* Intro */}
+          <motion.p
+            {...fadeUp}
+            className="text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto"
+          >
+            I design and build systems with a strong focus on clarity, scalability, and long-term reliability —
+            ensuring every piece of the product remains efficient, maintainable, and ready to grow.
           </motion.p>
 
-        </div>
-      </section>
-
-      {/* ================= PROJECTS ================= */}
-      <section className="py-24 border-t border-gray-200 dark:border-gray-800">
-        <div className="max-w-6xl mx-auto px-6 md:px-16">
-
-          <motion.h2 {...fadeUp} className="text-3xl font-bold mb-10">
-            Selected Work
-          </motion.h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {["AI Chatbot System", "Payment Platform"].map((project, i) => (
-              <motion.div
+          {/* Principles */}
+          <motion.div
+            {...fadeUp}
+            className="mt-12 grid sm:grid-cols-3 gap-6 text-left"
+          >
+            {[
+              {
+                title: "Clean Architecture",
+                desc: "Structured, modular codebases that are easy to scale, debug, and extend.",
+              },
+              {
+                title: "Scalable Systems",
+                desc: "Built to handle growth — from small users to large-scale production environments.",
+              },
+              {
+                title: "Performance First",
+                desc: "Optimized for speed, efficiency, and real-world usage under load.",
+              },
+            ].map((item, i) => (
+              <div
                 key={i}
-                {...fadeUp}
-                className="border border-gray-200 dark:border-gray-800 p-6 rounded-xl hover:border-gray-400 dark:hover:border-gray-600 transition"
+                className="p-5 rounded-xl border border-gray-200 dark:border-gray-800 
+                     bg-white/50 dark:bg-white/5 backdrop-blur-sm"
               >
-                <h3 className="text-xl font-semibold">{project}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mt-2 text-sm">
-                  Designed for real-world usage with scalable architecture.
+                <h3 className="font-medium text-gray-900 dark:text-white mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {item.desc}
                 </p>
-              </motion.div>
+              </div>
             ))}
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -290,3 +356,39 @@ export default function Home() {
     </ >
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+      {/* ================= PROJECTS ================= */}
+      {/* <section className="py-24 border-t border-gray-200 dark:border-gray-800">
+        <div className="max-w-6xl mx-auto px-6 md:px-16">
+
+          <motion.h2 {...fadeUp} className="text-3xl font-bold mb-10">
+            Selected Work
+          </motion.h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {["AI Chatbot System", "Payment Platform"].map((project, i) => (
+              <motion.div
+                key={i}
+                {...fadeUp}
+                className="border border-gray-200 dark:border-gray-800 p-6 rounded-xl hover:border-gray-400 dark:hover:border-gray-600 transition"
+              >
+                <h3 className="text-xl font-semibold">{project}</h3>
+                <p className="text-gray-600 dark:text-gray-400 mt-2 text-sm">
+                  Designed for real-world usage with scalable architecture.
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section> */}

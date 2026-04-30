@@ -58,8 +58,12 @@ export default function About() {
             "TypeScript",
             "Node.js",
             "MongoDB",
+            "MySQL",
+            "JWT Authentication",
             "Tailwind CSS",
             "REST APIs",
+            "VPS Deployment (Ubuntu, Nginx)",
+            "Openclaw Assistant for Customers",
             "AI / LLM Integration",
           ].map((tech, i) => (
             <span
