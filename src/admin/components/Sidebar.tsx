@@ -8,6 +8,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { name: "Dashboard", path: "/admin/dashboard" },
   { name: "Users", path: "/admin/users" },
+  { name: "Home Page", path: "/admin/homesettings" },
   { name: "Settings", path: "/admin/settings" },
 ];
 
