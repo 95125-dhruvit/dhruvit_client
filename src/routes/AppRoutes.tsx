@@ -22,6 +22,7 @@ import Dashboard from "../admin/pages/Dashboard";
 import AdminLogin from "../admin/pages/AdminLogin";
 import Settings from "../admin/pages/Settings";
 import HomePageSettings from "../admin/pages/HomePageSetting";
+import AboutPageSettings from "../admin/pages/AboutPageSetting";
 
 export default function AppRoutes() {
 
@@ -48,10 +49,10 @@ export default function AppRoutes() {
           element={<Experience />}
         />
 
-        <Route
+        {/* <Route
           path="/projects"
           element={<Projects />}
-        />
+        /> */}
 
         <Route
           path="/contact"
@@ -109,6 +110,12 @@ export default function AppRoutes() {
         <Route
           path="homesettings"
           element={<HomePageSettings />}
+        />
+
+        {/* ABOUT SETTINGS */}
+        <Route
+          path="aboutsettings"
+          element={<AboutPageSettings />}
         />
 
       </Route>

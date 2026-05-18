@@ -153,317 +153,509 @@ export default function Home() {
   ]);
 
   return (
-  <>
+    <>
 
-    {/* ================= SEO ================= */}
-    <SEOHead
-      title={
-        seo?.title ||
-        "Dhruvit Soni | Full Stack Developer"
-      }
+      {/* ================= SEO ================= */}
+      <SEOHead
+        title={
+          seo?.title ||
+          "Dhruvit Soni | Full Stack Developer"
+        }
 
-      description={
-        seo?.description ||
-        "Full Stack Developer building scalable systems, AI applications, APIs, and production-grade web platforms."
-      }
+        description={
+          seo?.description ||
+          "Full Stack Developer building scalable systems, AI applications, APIs, and production-grade web platforms."
+        }
 
-      keywords={
-        seo?.keywords?.join(", ") ||
-        "Dhruvit Soni, Full Stack Developer"
-      }
+        keywords={
+          seo?.keywords?.join(", ") ||
+          "Dhruvit Soni, Full Stack Developer"
+        }
 
-      image={
-        seo?.ogImage ||
-        "/preview.png"
-      }
+        image={
+          seo?.ogImage ||
+          "/preview.png"
+        }
 
-      url={
-        seo?.canonicalUrl ||
-        "https://yourdomain.com"
-      }
+        url={
+          seo?.canonicalUrl ||
+          "https://yourdomain.com"
+        }
 
-      noIndex={
-        seo?.noIndex || false
-      }
+        noIndex={
+          seo?.noIndex || false
+        }
 
-      noFollow={
-        seo?.noFollow || false
-      }
+        noFollow={
+          seo?.noFollow || false
+        }
 
-      author={
-        seo?.author ||
-        "Dhruvit Soni"
-      }
-    />
+        author={
+          seo?.author ||
+          "Dhruvit Soni"
+        }
+      />
 
-    {/* ================= HERO ================= */}
-    <section className="min-h-screen flex items-center relative overflow-hidden">
+      {/* ================= HERO ================= */}
+      <section className="min-h-screen flex items-center relative overflow-hidden bg-white dark:bg-black">
 
-      <div className="max-w-6xl mx-auto px-6 md:px-16 w-full">
+        {/* BACKGROUND GLOW */}
+        <div className="absolute top-[-180px] left-[-120px] w-[420px] h-[420px]  rounded-full pointer-events-none" />
 
-        {/* fade */}
-        <div className="hidden md:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute bottom-[-180px] right-[-120px] w-[420px] h-[420px]  rounded-full pointer-events-none" />
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        {/* GRID */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
 
-          {/* LEFT */}
-          <div className="relative z-20 min-w-0">
+            backgroundSize: "70px 70px",
+          }}
+        />
 
-            <motion.h1
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
-              className="text-4xl md:text-6xl font-bold leading-tight"
-            >
+        <div className="max-w-6xl mx-auto px-6 md:px-16 w-full">
 
-              {
-                homeData?.hero
-                  ?.greeting ||
-                "Hi, I'm"
-              }{" "}
+          {/* fade */}
+          <div className="hidden md:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-black to-transparent z-10 pointer-events-none" />
 
-              <span
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+
+            {/* LEFT */}
+            <div className="relative z-20 min-w-0">
+
+              {/* SMALL BADGE */}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.5,
+                }}
                 className="
-                  inline-block
-                  w-[18ch]
-                  sm:w-[20ch]
-                  md:w-[24ch]
-                  bg-gradient-to-r
-                  from-black
-                  to-gray-500
-                  dark:from-white
-                  dark:to-gray-500
-                  bg-clip-text
-                  text-transparent
-                "
+      inline-flex
+      items-center
+      gap-2
+      px-4
+      py-2
+      rounded-full
+      border
+      border-gray-200
+      dark:border-white/10
+      bg-white/50
+      dark:bg-white/[0.04]
+      backdrop-blur-xl
+      mb-7
+    "
               >
 
-                {displayed}
+                <div className="relative flex items-center justify-center">
 
-                <span className="ml-1 inline-block w-[1ch] animate-pulse">
-                  |
+                  <div className="absolute w-3 h-3 rounded-full bg-green-500 animate-ping opacity-75" />
+
+                  <div className="relative w-2.5 h-2.5 rounded-full bg-green-500" />
+
+                </div>
+
+                <span className="text-sm text-gray-600 dark:text-gray-300">
+                  Full Stack Developer
                 </span>
 
-              </span>
+              </motion.div>
 
-            </motion.h1>
+              {/* TITLE */}
+              <motion.h1
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.7,
+                }}
+                className="
+      text-4xl
+      md:text-6xl
+      font-black
+      leading-[1.02]
+      tracking-tight
+    "
+              >
 
-            <motion.p
+                {/* STATIC TEXT */}
+                <span className="block text-black dark:text-white">
+
+                  {
+                    homeData?.hero
+                      ?.greeting ||
+                    "Hi, I'm"
+                  }
+
+                </span>
+
+                {/* GRADIENT NAME */}
+                <span
+                  className="
+        relative
+        inline-block
+        mt-2
+        w-[18ch]
+        sm:w-[20ch]
+        md:w-[24ch]
+      "
+                >
+
+                  {/* GLOW */}
+                  <span
+                    className="
+          absolute
+          inset-0
+          bg-gradient-to-r
+          from-blue-500
+          via-purple-500
+          to-pink-500
+          blur-2xl
+          opacity-20
+        "
+                  />
+
+                  {/* TEXT */}
+                  <span
+                    className="
+          relative
+          bg-gradient-to-r
+          from-blue-500
+          via-purple-500
+          to-pink-500
+          bg-clip-text
+          text-transparent
+        "
+                  >
+
+                    {displayed}
+
+                  </span>
+
+                  {/* CURSOR */}
+                  <motion.span
+                    animate={{
+                      opacity: [1, 0, 1],
+                    }}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                    }}
+                    className="
+          ml-1
+          inline-block
+          text-blue-500
+        "
+                  >
+                    |
+                  </motion.span>
+
+                </span>
+
+              </motion.h1>
+
+              {/* DESCRIPTION */}
+              <motion.p
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.9,
+                }}
+                className="
+      mt-7
+      text-gray-600
+      dark:text-gray-400
+      text-lg
+      max-w-2xl
+      leading-relaxed
+    "
+              >
+
+                {
+                  homeData?.hero
+                    ?.description
+                }
+
+              </motion.p>
+
+              {/* BUTTONS */}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 1.1,
+                }}
+                className="mt-10 flex gap-4 flex-wrap"
+              >
+
+                {/* PRIMARY BUTTON */}
+                <a
+                  href={
+                    homeData?.hero
+                      ?.primaryButtonLink
+                  }
+                  className="
+        group
+        relative
+        overflow-hidden
+        rounded-2xl
+        bg-black
+        dark:bg-white
+        text-white
+        dark:text-black
+        px-7
+        py-3.5
+        font-medium
+        transition-all
+        duration-300
+        hover:scale-105
+        shadow-[0_10px_40px_rgba(0,0,0,0.15)]
+      "
+                >
+
+                  <span className="relative z-10">
+                    {
+                      homeData?.hero
+                        ?.primaryButtonText
+                    }
+                  </span>
+
+                  <div
+                    className="
+          absolute
+          inset-0
+          bg-gradient-to-r
+          from-blue-500/0
+          via-white/10
+          to-blue-500/0
+          translate-x-[-100%]
+          group-hover:translate-x-[100%]
+          transition-transform
+          duration-1000
+        "
+                  />
+
+                </a>
+
+                {/* SECONDARY BUTTON */}
+                <a
+                  href={
+                    homeData?.hero
+                      ?.secondaryButtonLink
+                  }
+                  className="
+        border
+        border-gray-300
+        dark:border-white/10
+        bg-white/50
+        dark:bg-white/[0.04]
+        backdrop-blur-xl
+        px-7
+        py-3.5
+        rounded-2xl
+        transition-all
+        duration-300
+        hover:bg-gray-100
+        dark:hover:bg-white/[0.08]
+        hover:scale-105
+      "
+                >
+
+                  {
+                    homeData?.hero
+                      ?.secondaryButtonText
+                  }
+
+                </a>
+
+              </motion.div>
+
+            </div>
+
+            {/* RIGHT IMAGE */}
+            <motion.div
               initial={{
                 opacity: 0,
-                y: 40,
+                x: 60,
               }}
               animate={{
                 opacity: 1,
-                y: 0,
+                x: 0,
               }}
               transition={{
                 duration: 0.8,
               }}
-              className="mt-6 text-gray-600 dark:text-gray-400 text-lg max-w-2xl"
+              className="
+          flex
+          justify-center
+          relative
+          z-10
+          ml-0
+          md:-ml-20
+          lg:-ml-32
+        "
             >
 
-              {
-                homeData?.hero
-                  ?.description
-              }
+              {/* IMAGE GLOW */}
+              <div
+                className="
+            absolute
+            inset-0
+            bg-gradient-to-br
+            from-blue-500/20
+            via-purple-500/10
+            to-pink-500/20
+            blur-3xl
+            scale-110
+            rounded-full
+          "
+              />
 
-            </motion.p>
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 1,
-              }}
-              className="mt-8 flex gap-4 flex-wrap"
-            >
-
-              <a
-                href={
-                  homeData?.hero
-                    ?.primaryButtonLink
-                }
-                className="bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-lg font-medium transition hover:opacity-90"
+              {/* GLASS CARD */}
+              <div
+                className="
+            relative
+            rounded-[32px]
+            border
+            border-white/10
+            bg-white/10
+            dark:bg-white/[0.04]
+            backdrop-blur-2xl
+            p-4
+            shadow-[0_10px_80px_rgba(0,0,0,0.18)]
+          "
               >
 
-                {
-                  homeData?.hero
-                    ?.primaryButtonText
-                }
+                {/* TOP LIGHT */}
+                <div className="absolute top-0 left-0 h-[2px] w-full bg-gradient-to-r from-transparent via-blue-500/60 to-transparent rounded-full" />
 
-              </a>
+                <motion.img
+                  src={
+                    homeData?.hero
+                      ?.heroImage ||
+                    "/dhruvit.png"
+                  }
+                  alt="Hero"
+                  className="
+              w-[240px]
+              sm:w-[280px]
+              md:w-[380px]
+              lg:w-[420px]
+              object-contain
+              opacity-95
+              relative
+              z-10
+            "
+                  animate={{
+                    y: [0, -15, 0],
+                    rotate: [
+                      0,
+                      2,
+                      -2,
+                      0,
+                    ],
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
 
-              <a
-                href={
-                  homeData?.hero
-                    ?.secondaryButtonLink
-                }
-                className="border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-lg transition hover:bg-gray-100 dark:hover:bg-gray-800"
-              >
-
-                {
-                  homeData?.hero
-                    ?.secondaryButtonText
-                }
-
-              </a>
+              </div>
 
             </motion.div>
 
           </div>
 
-          {/* RIGHT IMAGE */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: 60,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 0.8,
-            }}
+        </div>
+
+      </section>
+
+
+
+      {/* ================= SYSTEMS ================= */}
+      <section
+        className="
+    relative
+    py-24
+    border-t
+    overflow-hidden
+  "
+      >
+
+        {/* BACKGROUND GLOW */}
+        <div
+          className="
+      absolute
+      top-[-120px]
+      right-[-120px]
+      w-[320px]
+      h-[320px]
+      rounded-full
+      pointer-events-none
+    "
+        />
+
+        {/* GRID */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `
+        linear-gradient(to right, gray 1px, transparent 1px),
+        linear-gradient(to bottom, gray 1px, transparent 1px)
+      `,
+            backgroundSize: "70px 70px",
+          }}
+        />
+
+        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-16">
+
+          <motion.h2
+            {...fadeUp}
             className="
-              flex justify-center
-              relative z-10
-              ml-0 md:-ml-20 lg:-ml-32
-            "
+        text-3xl
+        md:text-4xl
+        font-black
+        tracking-tight
+        mb-12
+      "
           >
 
-            <motion.img
-              src={
-                homeData?.hero
-                  ?.heroImage ||
-                "/dhruvit.png"
-              }
-              alt="Hero"
-              className="
-                w-[240px]
-                sm:w-[280px]
-                md:w-[380px]
-                lg:w-[420px]
-                object-contain
-                opacity-90
-              "
-              animate={{
-                y: [0, -15, 0],
-                rotate: [
-                  0,
-                  2,
-                  -2,
-                  0,
-                ],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
+            {
+              homeData?.systemsSection
+                ?.title
+            }
 
-          </motion.div>
+          </motion.h2>
 
-        </div>
-
-      </div>
-
-    </section>
-
-    {/* ================= SYSTEMS ================= */}
-    <section className="py-24 border-t border-gray-200 dark:border-gray-800">
-
-      <div className="max-w-6xl mx-auto px-6 md:px-16">
-
-        <motion.h2
-          {...fadeUp}
-          className="text-3xl font-bold mb-10"
-        >
-
-          {
-            homeData?.systemsSection
-              ?.title
-          }
-
-        </motion.h2>
-
-        <div className="grid md:grid-cols-3 gap-6">
-
-          {
-            homeData?.systemsSection
-              ?.items?.map(
-                (
-                  item: any,
-                  i: number
-                ) => (
-
-                  <motion.div
-                    key={i}
-                    {...fadeUp}
-                    className="border border-gray-200 dark:border-gray-800 p-6 rounded-xl hover:border-gray-400 dark:hover:border-gray-600 transition"
-                  >
-
-                    <h3 className="text-lg font-semibold">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-gray-600 dark:text-gray-400 mt-3 text-sm">
-                      {item.desc}
-                    </p>
-
-                  </motion.div>
-
-                )
-              )
-          }
-
-        </div>
-
-      </div>
-
-    </section>
-
-    {/* ================= IMPACT ================= */}
-    <section className="py-28 border-t border-gray-200 dark:border-gray-800">
-
-      <div className="max-w-4xl mx-auto px-6 md:px-16">
-
-        <motion.h2
-          {...fadeUp}
-          className="text-3xl md:text-4xl font-semibold mb-16 tracking-tight"
-        >
-
-          {
-            homeData?.impactSection
-              ?.title
-          }
-
-        </motion.h2>
-
-        <div className="relative">
-
-          <div className="absolute left-3 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800"></div>
-
-          <div className="space-y-12">
+          <div className="grid md:grid-cols-3 gap-6">
 
             {
-              homeData?.impactSection
+              homeData?.systemsSection
                 ?.items?.map(
                   (
                     item: any,
@@ -473,20 +665,88 @@ export default function Home() {
                     <motion.div
                       key={i}
                       {...fadeUp}
-                      className="relative flex items-start gap-6"
+                      whileHover={{
+                        y: -8,
+                      }}
+                      transition={{
+                        duration: 0.3,
+                      }}
+                      className="
+                  group
+                  relative
+                  overflow-hidden
+                  rounded-[28px]
+                  border
+                  border-gray-200
+                  dark:border-white/10
+                  bg-white/60
+                  dark:bg-white/[0.04]
+                  backdrop-blur-2xl
+                  p-7
+                  transition-all
+                  duration-500
+                  hover:border-blue-500/30
+                  hover:shadow-[0_10px_50px_rgba(59,130,246,0.12)]
+                "
                     >
 
-                      <div className="relative z-10 mt-1.5">
-                        <div className="w-3 h-3 rounded-full bg-gray-900 dark:bg-white"></div>
-                      </div>
+                      {/* HOVER GRADIENT */}
+                      <div
+                        className="
+                    absolute
+                    inset-0
+                    opacity-0
+                    group-hover:opacity-100
+                    transition-opacity
+                    duration-500
+                    bg-gradient-to-br
+                    from-blue-500/[0.08]
+                    via-purple-500/[0.04]
+                    to-transparent
+                  "
+                      />
 
-                      <div className="flex-1">
+                      {/* TOP LIGHT */}
+                      <div
+                        className="
+                    absolute
+                    top-0
+                    left-0
+                    h-[2px]
+                    w-full
+                    bg-gradient-to-r
+                    from-transparent
+                    via-blue-500/50
+                    to-transparent
+                    opacity-0
+                    group-hover:opacity-100
+                    transition-opacity
+                    duration-500
+                  "
+                      />
 
-                        <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white">
+                      {/* CONTENT */}
+                      <div className="relative z-10">
+
+                        <h3
+                          className="
+                      text-xl
+                      font-semibold
+                      tracking-tight
+                    "
+                        >
                           {item.title}
                         </h3>
 
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed max-w-xl">
+                        <p
+                          className="
+                      text-gray-600
+                      dark:text-gray-400
+                      mt-4
+                      text-sm
+                      leading-relaxed
+                    "
+                        >
                           {item.desc}
                         </p>
 
@@ -502,600 +762,466 @@ export default function Home() {
 
         </div>
 
-      </div>
+      </section>
 
-    </section>
+      {/* ================= IMPACT ================= */}
+      <section
+        className="
+    relative
+    py-28
+    border-t
+    border-gray-200
+    dark:border-white/10
+    overflow-hidden
+  "
+      >
 
-    {/* ================= APPROACH ================= */}
-    <section className="py-28 border-t border-gray-200 dark:border-gray-800">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-16">
 
-      <div className="max-w-5xl mx-auto px-6 md:px-16 text-center">
+          {/* TITLE */}
+          <motion.h2
+            {...fadeUp}
+            className="
+        text-3xl
+        md:text-5xl
+        font-black
+        mb-20
+        tracking-tight
+        leading-tight
+      "
+          >
 
-        <motion.h2
-          {...fadeUp}
-          className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight"
-        >
+            {
+              homeData?.impactSection
+                ?.title
+            }
 
-          {
-            homeData?.approachSection
-              ?.title
-          }
+          </motion.h2>
 
-        </motion.h2>
+          {/* TIMELINE */}
+          <div className="relative">
 
-        <motion.p
-          {...fadeUp}
-          className="text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto"
-        >
+            {/* LINE */}
+            <div
+              className="
+          absolute
+          left-[11px]
+          top-0
+          bottom-0
+          w-px
+          bg-gradient-to-b
+          from-blue-500/60
+          via-purple-500/30
+          to-transparent
+        "
+            />
 
-          {
-            homeData?.approachSection
-              ?.description
-          }
+            <div className="space-y-10">
 
-        </motion.p>
+              {
+                homeData?.impactSection
+                  ?.items?.map(
+                    (
+                      item: any,
+                      i: number
+                    ) => (
 
-        <motion.div
-          {...fadeUp}
-          className="mt-12 grid sm:grid-cols-3 gap-6 text-left"
-        >
+                      <motion.div
+                        key={i}
+                        {...fadeUp}
+                        whileHover={{
+                          x: 6,
+                        }}
+                        transition={{
+                          duration: 0.3,
+                        }}
+                        className="
+                    group
+                    relative
+                    flex
+                    items-start
+                    gap-6
+                  "
+                      >
 
-          {
-            homeData?.approachSection
-              ?.items?.map(
-                (
-                  item: any,
-                  i: number
-                ) => (
+                        {/* DOT */}
+                        <div className="relative z-10 mt-2">
 
-                  <div
-                    key={i}
+                          {/* GLOW */}
+                          <div
+                            className="
+                        absolute
+                        inset-0
+                        rounded-full
+                        bg-blue-500
+                        blur-md
+                        opacity-0
+                        group-hover:opacity-100
+                        transition-opacity
+                        duration-300
+                      "
+                          />
+
+                          {/* DOT */}
+                          <div
+                            className="
+                        relative
+                        w-6
+                        h-6
+                        rounded-full
+                        border
+                        border-white/20
+                        bg-black
+                        dark:bg-white
+                        flex
+                        items-center
+                        justify-center
+                      "
+                          >
+
+                            <div
+                              className="
+                          w-2
+                          h-2
+                          rounded-full
+                          bg-white
+                          dark:bg-black
+                        "
+                            />
+
+                          </div>
+
+                        </div>
+
+                        {/* CARD */}
+                        <div
+                          className="
+                      flex-1
+                      relative
+                      overflow-hidden
+                      rounded-[28px]
+                      border
+                      border-gray-200
+                      dark:border-white/10
+                      bg-white/60
+                      dark:bg-white/[0.04]
+                      backdrop-blur-2xl
+                      p-6
+                      transition-all
+                      duration-500
+                      hover:border-blue-500/20
+                      hover:shadow-[0_10px_50px_rgba(59,130,246,0.08)]
+                    "
+                        >
+
+                          {/* TOP LIGHT */}
+                          <div
+                            className="
+                        absolute
+                        top-0
+                        left-0
+                        h-[2px]
+                        w-full
+                        bg-gradient-to-r
+                        from-transparent
+                        via-blue-500/60
+                        to-transparent
+                        opacity-0
+                        group-hover:opacity-100
+                        transition-opacity
+                        duration-500
+                      "
+                          />
+
+                          {/* HOVER BG */}
+                          <div
+                            className="
+                        absolute
+                        inset-0
+                        opacity-0
+                        group-hover:opacity-100
+                        transition-opacity
+                        duration-500
+                        bg-gradient-to-br
+                        from-blue-500/[0.05]
+                        via-purple-500/[0.03]
+                        to-transparent
+                      "
+                          />
+
+                          <div className="relative z-10">
+
+                            <h3
+                              className="
+                          text-lg
+                          md:text-xl
+                          font-semibold
+                          tracking-tight
+                          text-gray-900
+                          dark:text-white
+                        "
+                            >
+                              {item.title}
+                            </h3>
+
+                            <p
+                              className="
+                          text-sm
+                          md:text-base
+                          text-gray-600
+                          dark:text-gray-400
+                          mt-3
+                          leading-relaxed
+                          max-w-2xl
+                        "
+                            >
+                              {item.desc}
+                            </p>
+
+                          </div>
+
+                        </div>
+
+                      </motion.div>
+
+                    )
+                  )
+              }
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ================= APPROACH ================= */}
+      {/* ================= APPROACH ================= */}
+<section
+  className="
+    relative
+    py-28
+    border-t
+    border-gray-200
+    dark:border-white/10
+    overflow-hidden
+  "
+>
+
+  <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-16 text-center">
+
+    {/* TITLE */}
+    <motion.h2
+      {...fadeUp}
+      className="
+        text-3xl
+        md:text-5xl
+        font-black
+        mb-6
+        tracking-tight
+        leading-tight
+      "
+    >
+
+      {
+        homeData?.approachSection
+          ?.title
+      }
+
+    </motion.h2>
+
+    {/* DESCRIPTION */}
+    <motion.p
+      {...fadeUp}
+      className="
+        text-gray-600
+        dark:text-gray-400
+        leading-relaxed
+        max-w-2xl
+        mx-auto
+        text-base
+        md:text-lg
+      "
+    >
+
+      {
+        homeData?.approachSection
+          ?.description
+      }
+
+    </motion.p>
+
+    {/* CARDS */}
+    <motion.div
+      {...fadeUp}
+      className="
+        mt-14
+        grid
+        sm:grid-cols-3
+        gap-6
+        text-left
+      "
+    >
+
+      {
+        homeData?.approachSection
+          ?.items?.map(
+            (
+              item: any,
+              i: number
+            ) => (
+
+              <motion.div
+                key={i}
+                whileHover={{
+                  y: -8,
+                }}
+                transition={{
+                  duration: 0.3,
+                }}
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  rounded-[28px]
+                  border
+                  border-gray-200
+                  dark:border-white/10
+                  bg-white/60
+                  dark:bg-white/[0.04]
+                  backdrop-blur-2xl
+                  p-6
+                  transition-all
+                  duration-500
+                  hover:border-blue-500/20
+                  hover:shadow-[0_10px_50px_rgba(59,130,246,0.08)]
+                "
+              >
+
+                {/* TOP LIGHT */}
+                <div
+                  className="
+                    absolute
+                    top-0
+                    left-0
+                    h-[2px]
+                    w-full
+                    bg-gradient-to-r
+                    from-transparent
+                    via-blue-500/60
+                    to-transparent
+                    opacity-0
+                    group-hover:opacity-100
+                    transition-opacity
+                    duration-500
+                  "
+                />
+
+                {/* HOVER BG */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    opacity-0
+                    group-hover:opacity-100
+                    transition-opacity
+                    duration-500
+                    bg-gradient-to-br
+                    from-blue-500/[0.05]
+                    via-purple-500/[0.03]
+                    to-transparent
+                  "
+                />
+
+                {/* CONTENT */}
+                <div className="relative z-10">
+
+                  <h3
                     className="
-                      p-5 rounded-xl
-                      border border-gray-200
-                      dark:border-gray-800
-                      bg-white/50
-                      dark:bg-white/5
-                      backdrop-blur-sm
+                      text-lg
+                      font-semibold
+                      text-gray-900
+                      dark:text-white
+                      mb-3
+                      tracking-tight
                     "
                   >
+                    {item.title}
+                  </h3>
 
-                    <h3 className="font-medium text-gray-900 dark:text-white mb-1">
-                      {item.title}
-                    </h3>
+                  <p
+                    className="
+                      text-sm
+                      md:text-base
+                      text-gray-600
+                      dark:text-gray-400
+                      leading-relaxed
+                    "
+                  >
+                    {item.desc}
+                  </p>
 
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {item.desc}
-                    </p>
+                </div>
 
-                  </div>
+              </motion.div>
 
-                )
-              )
-          }
+            )
+          )
+      }
 
-        </motion.div>
+    </motion.div>
 
-      </div>
+  </div>
 
-    </section>
+</section>
 
-    {/* ================= CTA ================= */}
-    <section className="py-24 border-t border-gray-200 dark:border-gray-800 text-center">
+      {/* ================= CTA ================= */}
+      <section className="py-24 border-t border-gray-200 dark:border-gray-800 text-center">
 
-      <div className="max-w-3xl mx-auto px-6">
+        <div className="max-w-3xl mx-auto px-6">
 
-        <motion.h2
-          {...fadeUp}
-          className="text-3xl font-bold"
-        >
+          <motion.h2
+            {...fadeUp}
+            className="text-3xl font-bold"
+          >
 
-          {
-            homeData?.ctaSection
-              ?.title
-          }
+            {
+              homeData?.ctaSection
+                ?.title
+            }
 
-        </motion.h2>
+          </motion.h2>
 
-        <motion.p className="text-gray-600 dark:text-gray-400 mt-4">
+          <motion.p className="text-gray-600 dark:text-gray-400 mt-4">
 
-          {
-            homeData?.ctaSection
-              ?.description
-          }
+            {
+              homeData?.ctaSection
+                ?.description
+            }
 
-        </motion.p>
+          </motion.p>
 
-        <motion.a
-          href={
-            homeData?.ctaSection
-              ?.buttonLink
-          }
-          className="inline-block mt-8 bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
-        >
+          <motion.a
+            href={
+              homeData?.ctaSection
+                ?.buttonLink
+            }
+            className="inline-block mt-8 bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
+          >
 
-          {
-            homeData?.ctaSection
-              ?.buttonText
-          }
+            {
+              homeData?.ctaSection
+                ?.buttonText
+            }
 
-        </motion.a>
+          </motion.a>
 
-      </div>
+        </div>
 
-    </section>
+      </section>
 
-  </>
-);
+    </>
+  );
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { useEffect, useState } from "react";
-// import { motion } from "framer-motion";
-// import axios from "axios";
-// import SEOHead from "../components/common/SEOHead";
-
-// const API_URL = import.meta.env.VITE_API_URL;
-
-// const fadeUp = {
-//   initial: { opacity: 0, y: 40 },
-//   whileInView: { opacity: 1, y: 0 },
-//   transition: { duration: 0.6 },
-// };
-
-// export default function Home() {
-
-//   const [seo, setSeo] = useState<any>(null);
-
-//   const [displayed, setDisplayed] = useState("");
-//   const [index, setIndex] = useState(0);
-//   const [isDeleting, setIsDeleting] = useState(false);
-
-//   const phrases = [
-//     "Dhruvit Harshadbhai Soni",
-//     "a Full Stack Developer",
-//     "building scalable systems",
-//     "creating AI applications",
-//   ];
-
-//   // ================= FETCH SEO =================
-//   useEffect(() => {
-
-//     const fetchSEO = async () => {
-//       try {
-
-//         const res = await axios.get(
-//           `${API_URL}/api/seo/home`
-//         );
-
-//         if (res.data?.seo) {
-//           setSeo(res.data.seo);
-//         }
-
-//       } catch (err) {
-//         console.log("SEO fetch failed");
-//       }
-//     };
-
-//     fetchSEO();
-
-//   }, []);
-
-//   // ================= TYPEWRITER =================
-//   useEffect(() => {
-
-//     const currentText = phrases[index];
-
-//     let timeout: ReturnType<typeof setTimeout>;
-
-//     if (!isDeleting && displayed.length < currentText.length) {
-
-//       timeout = setTimeout(() => {
-//         setDisplayed(
-//           currentText.slice(
-//             0,
-//             displayed.length + 1
-//           )
-//         );
-//       }, 70);
-
-//     } else if (
-//       isDeleting &&
-//       displayed.length > 0
-//     ) {
-
-//       timeout = setTimeout(() => {
-//         setDisplayed(
-//           currentText.slice(
-//             0,
-//             displayed.length - 1
-//           )
-//         );
-//       }, 40);
-
-//     } else {
-
-//       timeout = setTimeout(() => {
-
-//         if (!isDeleting) {
-//           setIsDeleting(true);
-//         } else {
-//           setIsDeleting(false);
-//           setIndex(
-//             (prev) =>
-//               (prev + 1) % phrases.length
-//           );
-//         }
-
-//       }, 1200);
-
-//     }
-
-//     return () => clearTimeout(timeout);
-
-//   }, [displayed, isDeleting, index]);
-
-//   return (
-//     <>
-//       {/* ================= SEO ================= */}
-//       <SEOHead
-//         title={
-//           seo?.title ||
-//           "Dhruvit Soni | Full Stack Developer"
-//         }
-
-//         description={
-//           seo?.description ||
-//           "Full Stack Developer building scalable systems, AI applications, APIs, and production-grade web platforms."
-//         }
-
-//         keywords={
-//           seo?.keywords?.join(", ") ||
-//           "Dhruvit Soni, Full Stack Developer"
-//         }
-
-//         image={
-//           seo?.ogImage ||
-//           "/preview.png"
-//         }
-
-//         url={
-//           seo?.canonicalUrl ||
-//           "https://yourdomain.com"
-//         }
-
-//         noIndex={seo?.noIndex}
-//         noFollow={seo?.noFollow}
-
-//         author={seo?.author}
-//       />
-
-//       {/* existing sections */}
-//       {/* ================= HERO ================= */}
-//       <section className="min-h-screen flex items-center relative overflow-hidden">
-//         <div className="max-w-6xl mx-auto px-6 md:px-16 w-full">
-
-//           {/* fade (desktop only) */}
-//           <div className="hidden md:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-black to-transparent z-10 pointer-events-none" />
-
-//           <div className="grid md:grid-cols-2 gap-12 items-center">
-
-//             {/* ================= LEFT TEXT ================= */}
-//             <div className="relative z-20 min-w-0">
-//               <motion.h1
-//                 initial={{ opacity: 0, y: 40 }}
-//                 animate={{ opacity: 1, y: 0 }}
-//                 transition={{ duration: 0.6 }}
-//                 className="text-4xl md:text-6xl font-bold leading-tight"
-//               >
-//                 Hi, I'm{" "}
-//                 <span
-//                   className="
-//               inline-block
-//               w-[18ch] sm:w-[20ch] md:w-[24ch]
-//               bg-gradient-to-r from-black to-gray-500
-//               dark:from-white dark:to-gray-500
-//               bg-clip-text text-transparent
-//             "
-//                 >
-//                   {displayed}
-//                   <span className="ml-1 inline-block w-[1ch] animate-pulse">|</span>
-//                 </span>
-//               </motion.h1>
-
-//               <motion.p
-//                 initial={{ opacity: 0, y: 40 }}
-//                 animate={{ opacity: 1, y: 0 }}
-//                 transition={{ duration: 0.8 }}
-//                 className="mt-6 text-gray-600 dark:text-gray-400 text-lg max-w-2xl"
-//               >
-//                 Full Stack Developer focused on building production-grade systems
-//                 using React, Node.js, and scalable backend architecture.
-//               </motion.p>
-
-//               <motion.div
-//                 initial={{ opacity: 0, y: 40 }}
-//                 animate={{ opacity: 1, y: 0 }}
-//                 transition={{ duration: 1 }}
-//                 className="mt-8 flex gap-4 flex-wrap"
-//               >
-//                 <a
-//                   href="/projects"
-//                   className="bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-lg font-medium transition hover:opacity-90"
-//                 >
-//                   View Work
-//                 </a>
-
-//                 <a
-//                   href="/contact"
-//                   className="border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-lg transition hover:bg-gray-100 dark:hover:bg-gray-800"
-//                 >
-//                   Contact Me
-//                 </a>
-//               </motion.div>
-//             </div>
-
-//             {/* ================= RIGHT IMAGE ================= */}
-//             <motion.div
-//               initial={{ opacity: 0, x: 60 }}
-//               animate={{ opacity: 1, x: 0 }}
-//               transition={{ duration: 0.8 }}
-//               className="
-//           flex justify-center
-//           relative z-10
-//           ml-0 md:-ml-20 lg:-ml-32
-//         "
-//             >
-//               <motion.img
-//                 src="/dhruvit.png"
-//                 alt="Hero"
-//                 className="
-//             w-[240px]
-//             sm:w-[280px]
-//             md:w-[380px]
-//             lg:w-[420px]
-//             object-contain
-//             opacity-90
-//           "
-//                 animate={{
-//                   y: [0, -15, 0],
-//                   rotate: [0, 2, -2, 0],
-//                 }}
-//                 transition={{
-//                   duration: 6,
-//                   repeat: Infinity,
-//                   ease: "easeInOut",
-//                 }}
-//               />
-//             </motion.div>
-
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* ================= SYSTEMS ================= */}
-//       <section className="py-24 border-t border-gray-200 dark:border-gray-800">
-//         <div className="max-w-6xl mx-auto px-6 md:px-16">
-
-//           <motion.h2 {...fadeUp} className="text-3xl font-bold mb-10">
-//             Systems I Work On
-//           </motion.h2>
-
-//           <div className="grid md:grid-cols-3 gap-6">
-//             {[
-
-//               {
-//                 title: "Full-Stack Applications",
-//                 desc: "End-to-end web applications built for performance, scalability, and real users.",
-//               },
-//               {
-//                 title: "API & System Integrations",
-//                 desc: "Connecting third-party services, payments, and external systems seamlessly.",
-//               },
-//               {
-//                 title: "Scalable Backend Systems",
-//                 desc: "Robust and efficient backend architectures designed for reliability and growth.",
-//               },
-//               {
-//                 title: "Authentication & Security",
-//                 desc: "Secure user authentication, authorization, and data protection across applications.",
-//               },
-//               {
-//                 title: "Real-Time Systems",
-//                 desc: "Interactive features like live updates, messaging, and event-driven functionality.",
-//               },
-//               {
-//                 title: "Performance Optimization",
-//                 desc: "Improving speed, efficiency, and scalability for better user experience.",
-//               },
-
-//             ].map((item, i) => (
-//               <motion.div
-//                 key={i}
-//                 {...fadeUp}
-//                 className="border border-gray-200 dark:border-gray-800 p-6 rounded-xl hover:border-gray-400 dark:hover:border-gray-600 transition"
-//               >
-//                 <h3 className="text-lg font-semibold">{item.title}</h3>
-//                 <p className="text-gray-600 dark:text-gray-400 mt-3 text-sm">
-//                   {item.desc}
-//                 </p>
-//               </motion.div>
-//             ))}
-//           </div>
-
-//         </div>
-//       </section>
-
-//       {/* ================= IMPACT ================= */}
-//       <section className="py-28 border-t border-gray-200 dark:border-gray-800">
-//         <div className="max-w-4xl mx-auto px-6 md:px-16">
-
-//           {/* Heading */}
-//           <motion.h2
-//             {...fadeUp}
-//             className="text-3xl md:text-4xl font-semibold mb-16 tracking-tight"
-//           >
-//             Impact & Responsibilities
-//           </motion.h2>
-
-//           {/* Timeline */}
-//           <div className="relative">
-
-//             {/* Vertical line */}
-//             <div className="absolute left-3 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800"></div>
-
-//             <div className="space-y-12">
-//               {[
-//                 {
-//                   title: "Building Production Systems",
-//                   desc: "Develop and maintain real-world applications used by active users, ensuring stability and scalability.",
-//                 },
-//                 {
-//                   title: "Owning Backend Architecture",
-//                   desc: "Design APIs and system structures that scale efficiently while maintaining performance and reliability.",
-//                 },
-//                 {
-//                   title: "End-to-End Feature Delivery",
-//                   desc: "Take full ownership of features — from frontend interfaces to backend logic and database design.",
-//                 },
-//                 {
-//                   title: "Integrating External Services",
-//                   desc: "Connect payments, APIs, and third-party tools to extend product capabilities seamlessly.",
-//                 },
-//                 {
-//                   title: "Performance & Reliability Focus",
-//                   desc: "Continuously optimize speed, reduce latency, and ensure systems perform under real-world conditions.",
-//                 },
-//               ].map((item, i) => (
-//                 <motion.div
-//                   key={i}
-//                   {...fadeUp}
-//                   className="relative flex items-start gap-6"
-//                 >
-//                   {/* Dot */}
-//                   <div className="relative z-10 mt-1.5">
-//                     <div className="w-3 h-3 rounded-full bg-gray-900 dark:bg-white"></div>
-//                   </div>
-
-//                   {/* Content */}
-//                   <div className="flex-1">
-//                     <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white">
-//                       {item.title}
-//                     </h3>
-//                     <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed max-w-xl">
-//                       {item.desc}
-//                     </p>
-//                   </div>
-//                 </motion.div>
-//               ))}
-//             </div>
-
-//           </div>
-
-//         </div>
-//       </section>
-
-//       {/* ================= APPROACH ================= */}
-//       <section className="py-28 border-t border-gray-200 dark:border-gray-800">
-//         <div className="max-w-5xl mx-auto px-6 md:px-16 text-center">
-
-//           {/* Heading */}
-//           <motion.h2
-//             {...fadeUp}
-//             className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight"
-//           >
-//             Engineering Approach
-//           </motion.h2>
-
-//           {/* Intro */}
-//           <motion.p
-//             {...fadeUp}
-//             className="text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto"
-//           >
-//             I design and build systems with a strong focus on clarity, scalability, and long-term reliability —
-//             ensuring every piece of the product remains efficient, maintainable, and ready to grow.
-//           </motion.p>
-
-//           {/* Principles */}
-//           <motion.div
-//             {...fadeUp}
-//             className="mt-12 grid sm:grid-cols-3 gap-6 text-left"
-//           >
-//             {[
-//               {
-//                 title: "Clean Architecture",
-//                 desc: "Structured, modular codebases that are easy to scale, debug, and extend.",
-//               },
-//               {
-//                 title: "Scalable Systems",
-//                 desc: "Built to handle growth — from small users to large-scale production environments.",
-//               },
-//               {
-//                 title: "Performance First",
-//                 desc: "Optimized for speed, efficiency, and real-world usage under load.",
-//               },
-//             ].map((item, i) => (
-//               <div
-//                 key={i}
-//                 className="p-5 rounded-xl border border-gray-200 dark:border-gray-800
-//                      bg-white/50 dark:bg-white/5 backdrop-blur-sm"
-//               >
-//                 <h3 className="font-medium text-gray-900 dark:text-white mb-1">
-//                   {item.title}
-//                 </h3>
-//                 <p className="text-sm text-gray-600 dark:text-gray-400">
-//                   {item.desc}
-//                 </p>
-//               </div>
-//             ))}
-//           </motion.div>
-
-//         </div>
-//       </section>
-
-//       {/* ================= CTA ================= */}
-//       <section className="py-24 border-t border-gray-200 dark:border-gray-800 text-center">
-//         <div className="max-w-3xl mx-auto px-6">
-
-//           <motion.h2 {...fadeUp} className="text-3xl font-bold">
-//             Open to impactful opportunities
-//           </motion.h2>
-
-//           <motion.p className="text-gray-600 dark:text-gray-400 mt-4">
-//             Looking to contribute to teams building scalable products.
-//           </motion.p>
-
-//           <motion.a
-//             href="/contact"
-//             className="inline-block mt-8 bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
-//           >
-//             Get in Touch
-//           </motion.a>
-
-//         </div>
-//       </section>
-
-//     </ >
-//   );
-// }
